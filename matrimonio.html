@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guia do Matrimônio – Santuário de São Benedito</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Revista dos noivos: papel claro, verde profundo do Santuário, ouro discreto. Leitura em coluna, indicações intercaladas como anúncios de revista. */
+  --paper:#f8f7f2;
+  --paper-2:#efece2;
+  --ink:#1d2621;
+  --muted:#5b665f;
+  --green:#1f3d30;
+  --green-2:#2e5544;
+  --gold:#a8844a;
+  --gold-soft:#d9c59c;
+  --line:#d8d3c4;
+  --display:"Cormorant Garamond", "Garamond", "Times New Roman", serif;
+  --body:"Source Serif 4", Georgia, serif;
+  --label:"Jost", "Helvetica Neue", Arial, sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--green-2)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+img{max-width:100%}
+h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.1;text-wrap:balance;margin:0;color:var(--green)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.col{max-width:680px;margin:0 auto}
+.label{font-family:var(--label);font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+
+/* Barra superior */
+.top{position:sticky;top:0;z-index:20;background:rgba(248,247,242,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-size:20px;color:var(--green);text-decoration:none;font-weight:600;letter-spacing:.01em;display:inline-flex;align-items:center;gap:10px}
+.nav{display:flex;gap:18px;flex-wrap:wrap}
+.nav a{font-family:var(--label);font-size:13px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--ink);padding:6px 0}
+.nav a:hover{color:var(--gold)}
+.nav a.cta{color:var(--green);border-bottom:1px solid var(--gold)}
+@media (max-width:760px){.nav{gap:12px}.nav a{font-size:11.5px}.nav .hide-s{display:none}}
+
+/* Capa */
+.cover{background:var(--green);color:#f3efe3;position:relative;overflow:hidden}
+.cover::before{content:"";position:absolute;inset:18px;border:1px solid rgba(217,197,156,.55);pointer-events:none}
+.cover::after{content:"";position:absolute;inset:24px;border:1px solid rgba(217,197,156,.22);pointer-events:none}
+.cover .wrap{position:relative;padding-top:72px;padding-bottom:64px;display:grid;grid-template-columns:1.25fr .9fr;gap:48px;align-items:end}
+.cover .label{color:var(--gold-soft)}
+.cover h1{color:#fbf8ef;font-size:clamp(52px,8vw,104px);font-weight:400;margin:14px 0 18px;letter-spacing:-.01em}
+.cover h1 em{font-style:italic;color:var(--gold-soft)}
+.cover p.lede{font-size:20px;max-width:30em;color:#e6e1d2;margin:0}
+.seal{width:96px;height:auto;margin-bottom:14px;filter:drop-shadow(0 2px 6px rgba(0,0,0,.25))}
+.toc{border-top:1px solid rgba(217,197,156,.5);padding-top:14px}
+.toc a{display:grid;grid-template-columns:36px 1fr;gap:8px;padding:10px 0;border-bottom:1px solid rgba(217,197,156,.22);color:#f3efe3;text-decoration:none;font-family:var(--display);font-size:22px}
+.toc a span{font-family:var(--label);font-size:12px;color:var(--gold-soft);letter-spacing:.1em;padding-top:7px}
+.toc a:hover{color:var(--gold-soft)}
+.verse{margin-top:30px;font-family:var(--display);font-style:italic;font-size:21px;color:#e6e1d2}
+.verse small{display:block;font-family:var(--label);font-style:normal;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft);margin-top:6px}
+@media (max-width:860px){.cover .wrap{grid-template-columns:1fr;gap:32px;padding-top:56px}}
+
+/* Seções */
+section.chapter{padding:88px 0 40px}
+.chapter-head{text-align:center;margin-bottom:44px}
+.chapter-head .num{font-family:var(--display);font-size:20px;color:var(--gold);display:block;margin-bottom:4px}
+.chapter-head h2{font-size:clamp(38px,5vw,58px)}
+.chapter-head p{color:var(--muted);margin:12px auto 0;max-width:34em;font-style:italic}
+.rule{display:flex;align-items:center;gap:14px;justify-content:center;margin:22px auto 0;color:var(--gold)}
+.rule::before,.rule::after{content:"";width:64px;height:1px;background:var(--gold-soft)}
+.prose p{margin:0 0 1.1em}
+.prose .drop::first-letter{font-family:var(--display);float:left;font-size:4.2em;line-height:.8;padding:6px 10px 0 0;color:var(--green)}
+blockquote{margin:32px 0;padding:0 0 0 22px;border-left:2px solid var(--gold);font-family:var(--display);font-size:26px;line-height:1.35;font-style:italic;color:var(--green)}
+blockquote cite{display:block;margin-top:10px;font-family:var(--label);font-style:normal;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.sign{margin-top:28px;font-family:var(--display);font-size:26px;color:var(--green)}
+.sign small{display:block;font-family:var(--label);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.byline{font-family:var(--label);font-size:13px;letter-spacing:.06em;color:var(--muted);margin-top:24px}
+.byline a{color:var(--green-2)}
+
+/* Indicação intercalada (como anúncio de revista) */
+.insert{margin:64px auto 24px;max-width:960px;background:var(--paper-2);border:1px solid var(--line);padding:30px 32px;position:relative}
+.insert-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.insert-head h3{font-size:28px}
+.insert-head a{font-family:var(--label);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--green-2)}
+.insert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
+
+/* Cartão de parceiro */
+.p{background:var(--paper);border:1px solid var(--line);padding:22px 22px 18px;display:flex;flex-direction:column;gap:8px}
+.p .cat{font-family:var(--label);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.p h4{margin:0;font-family:var(--display);font-size:27px;font-weight:500;color:var(--green);line-height:1.1}
+.p .offer{font-size:16px;color:var(--ink);margin:2px 0 6px;flex:1}
+.p .offer b{font-weight:600;color:var(--green)}
+.p .links{display:flex;flex-wrap:wrap;gap:8px;padding-top:10px;border-top:1px solid var(--line)}
+.btn{display:inline-flex;align-items:center;gap:6px;font-family:var(--label);font-size:13px;text-decoration:none;padding:7px 12px;border:1px solid var(--green-2);color:var(--green);background:transparent;border-radius:2px;cursor:pointer}
+.btn:hover{background:var(--green);color:#fff}
+.btn.solid{background:var(--green);color:#fff}
+.btn.solid:hover{background:var(--green-2)}
+.btn svg{width:15px;height:15px}
+.phone{font-family:var(--label);font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+
+/* Processo */
+.steps{display:grid;gap:0;counter-reset:s}
+.step{display:grid;grid-template-columns:72px 1fr;gap:20px;padding:26px 0;border-top:1px solid var(--line)}
+.step .n{font-family:var(--display);font-size:46px;color:var(--gold);line-height:1}
+.step h3{font-size:30px;margin-bottom:8px}
+.step p{margin:0 0 .8em}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:6px}
+.two div{background:var(--paper-2);padding:16px 18px;border-left:2px solid var(--gold-soft);font-size:16.5px}
+.two b{display:block;font-family:var(--label);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--green);font-weight:500;margin-bottom:4px}
+@media (max-width:640px){.two{grid-template-columns:1fr}.step{grid-template-columns:1fr;gap:6px}}
+
+.check{list-style:none;padding:0;margin:8px 0 0;display:grid;gap:10px}
+.check li{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start;background:#fff;border:1px solid var(--line);padding:14px 16px}
+.check input{width:20px;height:20px;margin:4px 0 0;accent-color:var(--green)}
+.check label{cursor:pointer;font-size:16.5px}
+.check label b{color:var(--green)}
+.check li.done label{color:var(--muted)}
+.check-note{font-family:var(--label);font-size:13px;color:var(--muted);margin-top:10px}
+
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:18px 32px;margin-top:8px}
+.faq div h4{margin:0 0 4px;font-family:var(--display);font-size:23px;font-weight:500;color:var(--green)}
+.faq div p{margin:0;font-size:16.5px}
+@media (max-width:640px){.faq{grid-template-columns:1fr}}
+.gold-tip{margin-top:36px;padding:22px 26px;background:var(--green);color:#f3efe3;font-size:17.5px}
+.gold-tip b{color:var(--gold-soft);font-family:var(--label);font-weight:500;letter-spacing:.12em;text-transform:uppercase;font-size:12.5px;display:block;margin-bottom:4px}
+
+/* Dia dos noivos */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.duo h3{font-size:38px;margin-bottom:6px}
+.duo .kicker{font-style:italic;color:var(--muted);margin:0 0 18px}
+.prayer{margin-top:22px;padding:24px;border:1px solid var(--gold-soft);text-align:center;font-family:var(--display);font-style:italic;font-size:24px;line-height:1.35;color:var(--green)}
+@media (max-width:860px){.duo{grid-template-columns:1fr;gap:40px}}
+
+/* Guia de indicações */
+.guide-intro{max-width:640px;margin:0 auto 28px;text-align:center;color:var(--muted)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:28px}
+.filters button{font-family:var(--label);font-size:13px;letter-spacing:.06em;padding:8px 16px;background:transparent;border:1px solid var(--line);color:var(--ink);cursor:pointer;border-radius:40px}
+.filters button[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:#fff}
+.guide{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px}
+.guide .p[hidden]{display:none}
+.partner-note{margin:28px auto 0;max-width:640px;text-align:center;font-size:15.5px;color:var(--muted);font-style:italic}
+
+/* Contato */
+.contact{background:var(--green);color:#f3efe3;margin-top:88px}
+.contact .wrap{padding-top:72px;padding-bottom:64px;display:grid;grid-template-columns:1.1fr 1fr;gap:48px}
+.contact h2{color:#fbf8ef;font-size:clamp(36px,5vw,52px);margin:10px 0 14px}
+.contact .label{color:var(--gold-soft)}
+.contact p{color:#e2ddcf}
+.contact .btn{border-color:var(--gold-soft);color:#fbf8ef}
+.contact .btn:hover{background:var(--gold-soft);color:var(--green)}
+.contact .btn.solid{background:var(--gold-soft);color:var(--green);border-color:var(--gold-soft)}
+.info{display:grid;gap:18px;align-content:start}
+.info div{border-top:1px solid rgba(217,197,156,.35);padding-top:12px}
+.info b{display:block;font-family:var(--label);font-weight:500;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft)}
+.info span{font-size:18px}
+footer{background:#172e24;color:#b9c2ba;font-family:var(--label);font-size:13px;letter-spacing:.04em}
+footer .wrap{padding-top:20px;padding-bottom:22px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (max-width:860px){.contact .wrap{grid-template-columns:1fr}}
+@media (max-width:520px){body{font-size:17px}.wrap{padding:0 18px}.insert{padding:22px 18px}.cover::before{inset:10px}.cover::after{inset:14px}}
+
+/* Celular: menu em uma linha que desliza, botões maiores, atalho fixo para a secretaria */
+.wa-float{display:none}
+@media (max-width:760px){
+  .top .wrap{display:block;min-height:0;padding-top:8px}
+  .brand{display:flex}
+  .nav{width:100%;max-width:100%;min-width:0}
+  .brand{font-size:18px;justify-content:center}
+  .nav{flex-wrap:nowrap;overflow-x:auto;gap:20px;padding:4px 2px 6px;-webkit-overflow-scrolling:touch;scrollbar-width:none;justify-content:flex-start}
+  .nav::-webkit-scrollbar{display:none}
+  .nav .hide-s{display:inline}
+  .nav a{font-size:12px;white-space:nowrap;padding:8px 0}
+  section.chapter{padding:56px 0 24px;scroll-margin-top:96px}
+  .chapter-head{margin-bottom:30px}
+  .cover .wrap{padding-top:44px;padding-bottom:44px}
+  .cover p.lede{font-size:18px}
+  .toc a{font-size:20px;padding:12px 0}
+  .btn{min-height:44px;padding:10px 14px;font-size:14px}
+  .p .links .btn{flex:1 1 auto;justify-content:center}
+  .filters{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding-bottom:6px;scrollbar-width:none;margin-left:-18px;margin-right:-18px;padding-left:18px;padding-right:18px}
+  .filters::-webkit-scrollbar{display:none}
+  .filters button{white-space:nowrap;min-height:42px}
+  .guide{grid-template-columns:1fr}
+  .insert{margin:44px -18px 16px;border-left:0;border-right:0}
+  .insert-grid{grid-template-columns:1fr;gap:14px}
+  blockquote{font-size:22px}
+  .prose .drop::first-letter{font-size:3.6em}
+  .duo h3{font-size:34px}
+  .prayer{font-size:21px;padding:18px}
+  .contact{margin-top:56px}
+  .contact .wrap{padding-top:52px;padding-bottom:96px}
+  .contact p .btn{flex:1 1 100%;justify-content:center}
+  .wa-float{display:flex;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:30;justify-content:center;align-items:center;gap:8px;min-height:50px;background:var(--green);color:#fff;text-decoration:none;font-family:var(--label);font-size:15px;letter-spacing:.04em;border:1px solid var(--gold-soft);box-shadow:0 6px 18px rgba(0,0,0,.25)}
+  .wa-float svg{width:18px;height:18px}
+  footer .wrap{padding-bottom:84px}
+}
+section.chapter,.contact{scroll-margin-top:70px}
+.edition{display:inline-block;font-family:var(--label);font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-soft);border-top:1px solid var(--gold-soft);border-bottom:1px solid var(--gold-soft);padding:6px 2px;margin:-4px 0 22px}
+.valid{text-align:center;margin:-12px auto 26px;font-family:var(--label);font-size:14px;letter-spacing:.04em;color:var(--green);background:var(--paper-2);border:1px solid var(--gold-soft);padding:10px 16px;max-width:560px}
+.open-band{position:relative;z-index:2;padding:34px 24px 0}
+.ob-in{max-width:1072px;margin:0 auto;display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:rgba(217,197,156,.12);border:1px solid var(--gold-soft);padding:14px 18px;color:#f3efe3;font-size:17px;line-height:1.45}
+.ob-in b{color:#fbf8ef;font-weight:600}
+.ob-in span:nth-child(2){flex:1 1 300px}
+.ob-dot{width:10px;height:10px;border-radius:50%;background:var(--gold-soft);box-shadow:0 0 0 4px rgba(217,197,156,.25);flex:none}
+.ob-btn{font-family:var(--label);font-size:13.5px;letter-spacing:.04em;text-decoration:none;background:var(--gold-soft);color:var(--green);padding:10px 16px;white-space:nowrap}
+.ob-btn{display:inline-flex;align-items:center;gap:8px}
+.ob-btn svg{width:20px;height:20px;flex:none}
+.ob-btn:hover{background:#fbf8ef}
+.cover .wrap{padding-top:44px}
+@media (max-width:760px){.open-band{padding:24px 18px 0}.ob-in{font-size:15.5px;padding:14px}.ob-btn{flex:1 1 100%;text-align:center;min-height:44px;display:flex;align-items:center;justify-content:center}.cover .wrap{padding-top:30px}}
+/* Vitrine de indicações na capa */
+.showcase{position:relative;z-index:2;padding:0 24px 40px}
+.sc-in{max-width:1072px;margin:0 auto;background:#f8f7f2;color:var(--ink);display:grid;grid-template-columns:minmax(220px,300px) 1fr;gap:18px 28px;align-items:center;padding:20px 24px;border-top:3px solid var(--gold)}
+.sc-head .label{color:var(--gold)}
+.sc-head p{margin:2px 0 0;font-family:var(--display);font-size:22px;line-height:1.2;color:var(--green)}
+.sc-head b{font-weight:600}
+.sc-links{display:flex;flex-wrap:wrap;gap:8px}
+.sc-links a{font-family:var(--label);font-size:14px;text-decoration:none;color:var(--green);border:1px solid var(--gold-soft);padding:9px 16px;border-radius:40px;background:#fff}
+.sc-links a:hover{background:var(--green);color:#fff;border-color:var(--green)}
+.sc-links a.sc-all{background:var(--green);color:#fff;border-color:var(--green)}
+.sc-links a.sc-all:hover{background:var(--green-2)}
+.nav a.nav-ind{background:var(--gold);color:#fff;padding:7px 14px;border-radius:2px}
+.nav a.nav-ind:hover{background:var(--green);color:#fff}
+@media (max-width:860px){.sc-in{grid-template-columns:1fr}}
+@media (max-width:760px){
+  .showcase{padding:0 18px 30px}
+  .sc-in{padding:18px 16px}
+  .sc-head p{font-size:20px}
+  .sc-links a{flex:1 1 40%;text-align:center;min-height:44px;display:flex;align-items:center;justify-content:center}
+  .sc-links a.sc-all{flex-basis:100%}
+  .nav a.nav-ind{order:-1;padding:6px 12px;margin:2px 0}
+  .cover .wrap > div:nth-child(2){display:none}
+  .cover .wrap{padding-bottom:26px}
+  .cover .seal{width:76px}
+}
+.cover .wrap{padding-bottom:36px}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio"><img src="data:image/webp;base64,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" alt="" width="26" height="34">Santuário de São Benedito</a>
+    <nav class="nav" aria-label="Seções">
+      <a href="#palavra" class="hide-s">Palavra do Padre</a>
+      <a href="#processo">Documentação</a>
+      <a href="#dia-dos-noivos" class="hide-s">Dia dos Noivos</a>
+      <a href="#contato">Contato</a>
+      <a href="#indicacoes" class="nav-ind">Indicações</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+
+<!-- CAPA -->
+<section class="cover">
+  <div class="open-band"><div class="ob-in"><span class="ob-dot" aria-hidden="true"></span><span><b>Agenda de casamentos 2027 aberta.</b> Consulte as datas disponíveis com a secretaria do Santuário.</span><a class="ob-btn" href="https://wa.me/552132519546" target="_blank" rel="noopener"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 6.9L3.2 29l6.5-1.7c1.9 1 4.1 1.6 6.3 1.6 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.6c-2 0-3.9-.5-5.6-1.5l-.4-.2-3.9 1 1-3.7-.3-.4c-1.1-1.7-1.7-3.7-1.7-5.8C5.1 9.9 10 5.2 16 5.2s10.9 4.7 10.9 10.6S22 26.6 16 26.6zm6-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7s1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.8 5 .8.3 1.4.5 1.9.7.8.3 1.6.2 2.2.1.7-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>Secretaria do Santuário</a></div></div>
+  <div class="wrap">
+    <div>
+      <img class="seal" src="data:image/webp;base64,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" alt="Brasão do Santuário de São Benedito" width="113" height="150">
+      <div class="label">Santuário Arquidiocesano de São Benedito · Pilares</div>
+      <h1>Guia do <em>Matrimônio</em></h1>
+      <div class="edition">Edição 2027</div>
+      <p class="lede">Para os noivos que desejam celebrar o seu “sim” diante de Deus. Uma palavra do Pároco, o caminho da documentação, conselhos para o grande dia e os parceiros que o Santuário indica com carinho.</p>
+    </div>
+    <div>
+      <nav class="toc" aria-label="Sumário">
+        <a href="#palavra"><span>01</span>A beleza do Matrimônio</a>
+        <a href="#processo"><span>02</span>O processo matrimonial</a>
+        <a href="#dia-dos-noivos"><span>03</span>O dia da noiva e do noivo</a>
+        <a href="#indicacoes"><span>04</span>Indicações do Santuário</a>
+        <a href="#contato"><span>05</span>Fale com a secretaria</a>
+      </nav>
+      <p class="verse">“Acima de tudo, revesti-vos da caridade, que é o vínculo da perfeição.”<small>Colossenses 3,14</small></p>
+    </div>
+  </div>
+  <div class="showcase">
+    <div class="sc-in">
+      <div class="sc-head">
+        <div class="label">Indicações do Santuário</div>
+        <p><b id="sc-count">9 parceiros</b> com condições especiais para os noivos</p>
+      </div>
+      <nav class="sc-links" aria-label="Indicações por tipo">
+        <a href="#indicacoes" data-go="cerimonia">Cerimônia</a>
+        <a href="#indicacoes" data-go="musica">Música</a>
+        <a href="#indicacoes" data-go="beleza">Beleza</a>
+        <a href="#indicacoes" data-go="festa">Festa e doces</a>
+        <a href="#indicacoes" data-go="papelaria">Convites</a>
+        <a href="#indicacoes" data-go="todos" class="sc-all">Ver todos →</a>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<!-- 01 PALAVRA DO PADRE -->
+<section class="chapter" id="palavra">
+  <div class="wrap">
+    <header class="chapter-head">
+      <span class="num">01 · Palavra do Padre</span>
+      <h2>A beleza do Matrimônio</h2>
+      <div class="rule" aria-hidden="true">✦</div>
+    </header>
+    <article class="col prose">
+      <p><em>Queridos noivos,</em></p>
+      <p class="drop">O matrimônio não é apenas uma convenção social ou um contrato de convivência, mas um verdadeiro projeto de Deus para a felicidade humana. No matrimônio, com força de sacramento, o amor entre um homem e uma mulher torna-se um sinal visível do amor de Cristo pela sua Igreja. Como nos recorda o Catecismo da Igreja Católica (n. 1660): “A aliança matrimonial, pela qual um homem e uma mulher constituem entre si uma comunidade íntima de vida e de amor, foi fundada e dotada das suas leis próprias pelo Criador”. É nesta união que o casal encontra a força para caminhar em conjunto, crescendo na santidade e na entrega mútua.</p>
+      <blockquote>“Os sacramentos são sinais eficazes da graça, instituídos por Cristo e confiados à Igreja, por meio dos quais nos é dispensada a vida divina.”<cite>Catecismo da Igreja Católica, 1131</cite></blockquote>
+      <p>Viver o sentido sacramental do matrimônio significa colocar Deus no centro da casa. A espiritualidade conjugal é uma necessidade para que o amor não se desgaste com o tempo, mas se renove na oração e na paciência. A Bíblia ensina-nos que o compromisso vai além do sentimento passageiro: “O que Deus uniu, não o separe o homem” (Mateus 19,6). Quando os esposos rezam juntos e buscam a graça de Deus, a família transforma-se numa “Igreja doméstica”, onde o perdão e a alegria são o pão de cada dia.</p>
+      <p>Por fim, convido todos os casais a contemplarem a beleza da sua vocação. Não tenham medo das dificuldades, pois a graça do sacramento é um auxílio constante que nunca falha. Recordem sempre as palavras de São Paulo: “Acima de tudo, revesti-vos da caridade (amor), que é o vínculo da perfeição” (Colossenses 3,14). Que o vosso lar seja um porto seguro de fé e que o testemunho da vossa união seja luz para o nosso Santuário de São Benedito e para toda a nossa comunidade.</p>
+      <div class="sign">Padre Rodrigo Dias<small>Pároco</small></div>
+      <p class="byline"><a href="https://www.instagram.com/padrerodrigodias" target="_blank" rel="noopener">Instagram do Padre Rodrigo Dias</a></p>
+    </article>
+
+    <aside class="insert" aria-label="Indicações para a cerimônia">
+      <div class="insert-head">
+        <div><div class="label">Indicação do Santuário</div><h3>Para a cerimônia e a música</h3></div>
+        <a href="#indicacoes">Ver todas as indicações →</a>
+      </div>
+      <div class="insert-grid" data-slot="cerimonia"></div>
+    </aside>
+  </div>
+</section>
+
+<!-- 02 PROCESSO -->
+<section class="chapter" id="processo">
+  <div class="wrap">
+    <header class="chapter-head">
+      <span class="num">02 · Documentação</span>
+      <h2>Como funciona o processo matrimonial?</h2>
+      <p>Mais do que uma etapa burocrática, é a Igreja caminhando ao lado do casal, para que o “sim” no altar seja o alicerce de uma união plena, consciente e feliz.</p>
+      <div class="rule" aria-hidden="true">✦</div>
+    </header>
+
+    <div class="col">
+      <div class="steps">
+        <div class="step">
+          <div class="n">1</div>
+          <div>
+            <h3>Onde começar?</h3>
+            <p>O processo deve ser aberto na paróquia de residência do noivo ou da noiva. Se desejarem casar em outra igreja, deverão solicitar uma “transferência” depois que a documentação estiver pronta.</p>
+            <div class="two">
+              <div><b>Para a celebração</b>Vocês podem escolher a paróquia que mais toca o coração. Procurem a secretaria dessa igreja para ver datas, taxas e as regras do dia da cerimônia.</div>
+              <div><b>Para a documentação</b>O processo é aberto na paróquia onde um dos dois mora hoje. Cada rua pertence a uma paróquia. Se o casamento for em outra igreja, essa paróquia emite o documento que autoriza a celebração.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="n">2</div>
+          <div>
+            <h3>Documentos essenciais</h3>
+            <p>Esqueçam a papelada infinita. Foquem nestes itens, e vão marcando o que já está pronto:</p>
+            <ul class="check" id="checklist">
+              <li><input type="checkbox" id="doc1"><label for="doc1"><b>Certidão de Batismo atualizada.</b> É o documento mais importante. Pedir na paróquia do Batismo, emitida nos últimos 6 meses, informando que é para fins matrimoniais.</label></li>
+              <li><input type="checkbox" id="doc2"><label for="doc2"><b>Certificado do Curso de Noivos.</b> Participação obrigatória em um encontro de preparação. No Santuário: <a href="https://www.instagram.com/epvm.benedito" target="_blank" rel="noopener">@epvm.benedito</a>.</label></li>
+              <li><input type="checkbox" id="doc3"><label for="doc3"><b>Identidade e CPF dos noivos.</b> Cópias simples.</label></li>
+              <li><input type="checkbox" id="doc4"><label for="doc4"><b>Comprovante de residência.</b> Confirma a paróquia responsável.</label></li>
+              <li><input type="checkbox" id="doc5"><label for="doc5"><b>Dados de duas testemunhas.</b> Nome, profissão, identidade e endereço. Trazer os documentos.</label></li>
+              <li><input type="checkbox" id="doc6"><label for="doc6"><b>Protocolo do civil.</b> O processo no cartório corre em paralelo; informem-se sobre os prazos. Se já forem casados no civil, basta a Certidão de Casamento.</label></li>
+            </ul>
+            <p class="check-note" id="check-note">Marque os itens já providenciados. As marcas ficam guardadas só neste aparelho.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="n">3</div>
+          <div>
+            <h3>Pontos de atenção</h3>
+            <p><b>Entrevista com o padre.</b> Uma conversa simples e sincera, em que o padre verifica se o casal compreende o que é o matrimônio e se age por livre vontade. Faz parte do processo e é marcada pela igreja que cuida da documentação.</p>
+            <p><b>Proclamas.</b> A igreja publica o aviso do casamento para que a comunidade tome conhecimento. Esse passo leva tempo: não deixem o processo para o último momento.</p>
+            <p><b>Casamento com não católicos.</b> Se um dos noivos não for católico ou não for batizado, é possível casar. Os passos adequados são orientados a partir da entrevista e da entrega dos documentos.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="n">4</div>
+          <div>
+            <h3>Dúvidas frequentes</h3>
+            <div class="faq">
+              <div><h4>Preciso ser crismado ou ter feito a Primeira Comunhão?</h4><p>A Igreja recomenda fortemente, mas a falta desses sacramentos não impede o casamento. O ideal é regularizar antes ou logo depois.</p></div>
+              <div><h4>E se já moramos juntos?</h4><p>Não há impedimento. O processo é o mesmo, e o acolhimento também.</p></div>
+              <div><h4>Quanto custa?</h4><p>Cada paróquia tem uma taxa de expediente para os custos de manutenção e documentação. Consultem a secretaria.</p></div>
+              <div><h4>Posso casar fora da igreja?</h4><p>O matrimônio católico deve ser celebrado em lugar sagrado: igrejas ou capelas.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gold-tip"><b>Dica de ouro</b>O primeiro passo é ligar para a secretaria da sua paróquia e marcar uma conversa inicial. Ela é a sua melhor guia. No Santuário, fale conosco pelo WhatsApp <a href="https://wa.me/552132519546" style="color:#f3efe3">(21) 3251-9546</a>.</div>
+    </div>
+
+    <aside class="insert" aria-label="Indicação para convites">
+      <div class="insert-head">
+        <div><div class="label">Indicação do Santuário</div><h3>Convites e lembranças</h3></div>
+        <a href="#indicacoes">Ver todas as indicações →</a>
+      </div>
+      <div class="insert-grid" data-slot="papelaria"></div>
+    </aside>
+  </div>
+</section>
+
+<!-- 03 DIA DOS NOIVOS -->
+<section class="chapter" id="dia-dos-noivos">
+  <div class="wrap">
+    <header class="chapter-head">
+      <span class="num">03 · Dia dos Noivos</span>
+      <h2>O grande dia, com o coração em paz</h2>
+      <p>Conselhos práticos e espirituais para viver cada momento antes da cerimônia.</p>
+      <div class="rule" aria-hidden="true">✦</div>
+    </header>
+
+    <div class="duo">
+      <article class="prose">
+        <div class="label">Para ela</div>
+        <h3>Dia da Noiva</h3>
+        <p class="kicker">Quanto mais organizado e leve for o dia, melhor você vai aproveitar.</p>
+        <p><b>Monte um cronograma</b> com horários de cabelo, maquiagem, fotos, alimentação e saída para a cerimônia. Não é elegante a noiva atrasar: planeje o dia com pelo menos 30 minutos de folga e combine antes todos os detalhes com os profissionais ou o estúdio.</p>
+        <p><b>Alimente-se bem.</b> Coma algo leve antes e durante o dia (frutas, sanduíche, suco) e evite ficar em jejum. Isso mantém a energia e afasta a ansiedade. Beba água e vá ao banheiro antes da cerimônia.</p>
+        <p><b>Prefira uma maquiagem clássica,</b> elegante e delicada, que valorize a beleza natural e o significado do momento, já que o casamento é um sacramento. Cuidado com os exageros: pense em algo atemporal, que fique bonito hoje e daqui a 20 anos nas fotos.</p>
+        <p><b>Respire e desacelere.</b> Este é um momento único. Faça uma oração pessoal ou em família e, se possível, leia um trecho da Bíblia (muitas noivas escolhem 1 Coríntios 13). Entregue o seu casamento a Deus e peça paz ao coração. Os planos de Deus são perfeitos. Seja feliz!</p>
+        <p class="byline">Dicas de <a href="https://www.instagram.com/rayanenoivasrj" target="_blank" rel="noopener">Rayane Martins</a>, do Studio R Martins</p>
+      </article>
+
+      <article class="prose">
+        <div class="label">Para ele</div>
+        <h3>Dia do Noivo</h3>
+        <p class="kicker">A promessa de fidelidade para a vida inteira.</p>
+        <p>O dia da Celebração do Matrimônio marca a decisão de amar para sempre e o compromisso de respeitar a mulher com quem se casa. É um passo bonito, fascinante e também exigente. Que seja um dia para pensar no amor que fundamenta a união, para fortalecer a entrega de si mesmo e os desafios da paternidade, e para entrar na vida conjugal com respeito, gratidão e disponibilidade para o perdão.</p>
+        <p>É uma festa verdadeira, uma festa cristã, e convém que seja também um dia de sobriedade, que destaque o que é mais importante: a bênção do Senhor sobre o amor dos noivos. Só se ama para sempre quando se aprende a amar todos os dias.</p>
+        <p><b>Caro noivo,</b> procure o Sacramento da Confissão, para estar em estado de graça. Se puder, reúna-se com os padrinhos e familiares próximos. Ajude a noiva nos últimos detalhes, cuide de si (barba e cabelo, por exemplo) e demonstre gratidão: envie uma mensagem, flores ou um pequeno presente.</p>
+        <p>Reserve um tempo para a oração. Como ensina o Papa Francisco, o amor cotidiano dos esposos é o verdadeiro pão da alma, que os sustenta para seguir em frente (Praça de São Pedro, 14 de fevereiro de 2014).</p>
+        <div class="prayer">“Senhor, o amor nosso de cada dia nos dai hoje! Ensinai-nos a amar-nos e a querer o bem para nosso matrimônio e família!”</div>
+        <p class="byline">Texto do <a href="https://www.instagram.com/lucarlos.pereira" target="_blank" rel="noopener">Diácono Luís Carlos</a></p>
+      </article>
+    </div>
+
+    <aside class="insert" aria-label="Indicações para o dia da noiva">
+      <div class="insert-head">
+        <div><div class="label">Indicação do Santuário</div><h3>Beleza e dia da noiva</h3></div>
+        <a href="#indicacoes">Ver todas as indicações →</a>
+      </div>
+      <div class="insert-grid" data-slot="beleza"></div>
+    </aside>
+  </div>
+</section>
+
+<!-- 04 INDICAÇÕES -->
+<section class="chapter" id="indicacoes">
+  <div class="wrap">
+    <header class="chapter-head">
+      <span class="num">04 · Indicações</span>
+      <h2>Parceiros do Santuário</h2>
+      <p>Profissionais que conhecem a nossa casa e oferecem condições especiais a quem celebra o seu dia conosco.</p>
+      <div class="rule" aria-hidden="true">✦</div>
+    </header>
+    <p class="valid">Condições válidas para casamentos celebrados no Santuário em 2027.</p>
+    <div class="filters" role="group" aria-label="Filtrar indicações">
+      <button type="button" data-f="todos" aria-pressed="true">Todos</button>
+      <button type="button" data-f="cerimonia" aria-pressed="false">Cerimônia</button>
+      <button type="button" data-f="musica" aria-pressed="false">Música</button>
+      <button type="button" data-f="beleza" aria-pressed="false">Beleza</button>
+      <button type="button" data-f="festa" aria-pressed="false">Festa e doces</button>
+      <button type="button" data-f="papelaria" aria-pressed="false">Convites</button>
+    </div>
+    <div class="guide" id="guide"></div>
+    <p class="partner-note">Ao entrar em contato, digam que vão casar no Santuário de São Benedito para receber a condição especial.</p>
+  </div>
+</section>
+
+</main>
+
+<!-- 05 CONTATO -->
+<section class="contact" id="contato">
+  <div class="wrap">
+    <div>
+      <div class="label">05 · Secretaria</div>
+      <h2>Vamos conversar sobre o seu casamento?</h2>
+      <p>Datas, documentos ou qualquer dúvida: a secretaria do Santuário acompanha vocês em cada passo.</p>
+      <p style="display:flex;gap:10px;flex-wrap:wrap;margin-top:22px">
+        <a class="btn solid" href="https://wa.me/552132519546" target="_blank" rel="noopener"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 6.9L3.2 29l6.5-1.7c1.9 1 4.1 1.6 6.3 1.6 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.6c-2 0-3.9-.5-5.6-1.5l-.4-.2-3.9 1 1-3.7-.3-.4c-1.1-1.7-1.7-3.7-1.7-5.8C5.1 9.9 10 5.2 16 5.2s10.9 4.7 10.9 10.6S22 26.6 16 26.6zm6-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7s1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.8 5 .8.3 1.4.5 1.9.7.8.3 1.6.2 2.2.1.7-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>Conversar pelo WhatsApp</a>
+        <a class="btn" href="mailto:benedito.pilares@arqrio.org.br">Enviar e-mail</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=-22.882006,-43.293602" target="_blank" rel="noopener">Ver no mapa</a>
+      </p>
+    </div>
+    <div class="info">
+      <div><b>WhatsApp da secretaria</b><span>(21) 3251-9546</span></div>
+      <div><b>E-mail</b><span>benedito.pilares@arqrio.org.br</span></div>
+      <div><b>Endereço</b><span>Avenida Dom Hélder Câmara, 6653 · Pilares · Rio de Janeiro</span></div>
+      <div><b>Pároco</b><span>Padre Rodrigo Dias</span></div>
+    </div>
+  </div>
+</section>
+<a class="wa-float" href="https://wa.me/552132519546" target="_blank" rel="noopener"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 6.9L3.2 29l6.5-1.7c1.9 1 4.1 1.6 6.3 1.6 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.6c-2 0-3.9-.5-5.6-1.5l-.4-.2-3.9 1 1-3.7-.3-.4c-1.1-1.7-1.7-3.7-1.7-5.8C5.1 9.9 10 5.2 16 5.2s10.9 4.7 10.9 10.6S22 26.6 16 26.6zm6-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7s1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.8 5 .8.3 1.4.5 1.9.7.8.3 1.6.2 2.2.1.7-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>Falar com a secretaria</a>
+<footer>
+  <div class="wrap">
+    <span>Santuário Arquidiocesano de São Benedito</span>
+    <span>Arquidiocese de São Sebastião do Rio de Janeiro</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var IG='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>';
+  var WA='<svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 6.9L3.2 29l6.5-1.7c1.9 1 4.1 1.6 6.3 1.6 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.6c-2 0-3.9-.5-5.6-1.5l-.4-.2-3.9 1 1-3.7-.3-.4c-1.1-1.7-1.7-3.7-1.7-5.8C5.1 9.9 10 5.2 16 5.2s10.9 4.7 10.9 10.6S22 26.6 16 26.6zm6-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7s1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.8 5 .8.3 1.4.5 1.9.7.8.3 1.6.2 2.2.1.7-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>';
+
+  // Parceiros do Santuário (fonte: página "Indicações" do site do Santuário)
+  var P=[
+    {id:"vieira",grupo:"cerimonia",cat:"Cerimonialista",nome:"Sra. Vieira",oferta:"<b>Até 15% de desconto</b> para casamentos no Santuário.",tel:["(21) 98554-9996"],ig:["jessicavieiraassessoria"]},
+    {id:"carlos",grupo:"cerimonia",cat:"Decoração e flores",nome:"Carlos Augusto",oferta:"<b>10% de desconto</b>, com buquê da noiva e lapelas para casamentos no Santuário.",tel:["(21) 99554-1551"],ig:["carlosaugusto_jto"]},
+    {id:"marjorie",grupo:"musica",cat:"Cantora",nome:"Marjorie Fernandes",oferta:"<b>10% de desconto</b> para casamentos no Santuário, com suporte de sonorização.",tel:["(85) 98601-9389"],ig:["marjoriefernandesn"],extra:{t:"Contatos",u:"https://msha.ke/marjoriefernandes"}},
+    {id:"duo",grupo:"musica",cat:"Música para casamentos",nome:"Duo em Harmonia",oferta:"<b>10% de desconto</b> para casamentos no Santuário.",tel:["(21) 99276-0285"],ig:[]},
+    {id:"rmartins",grupo:"beleza",cat:"Maquiagem · Dia da Noiva · Estúdio de beleza",nome:"Studio R Martins",oferta:"O pacote de Dia da Noiva <b>ganha um dia de spa</b>, com limpeza de pele, sobrancelha e massagem relaxante.",tel:[],ig:["rayanenoivasrj","studiormartins"]},
+    {id:"cores",grupo:"beleza",cat:"Dia da Noiva e maquiagem",nome:"Beleza em Cores",oferta:"<b>10% de desconto</b> em maquiagem e penteado, incluindo o Dia da Noiva, e <b>uma limpeza de pele de presente</b> para casamentos no Santuário.",tel:["(21) 98759-7316"],ig:["belezaemcoresestudio"]},
+    {id:"joy",grupo:"festa",cat:"Casa de festas",nome:"Joy Garden Festas",oferta:"<b>5% de desconto ou uma mesa de chocolates</b> para casamentos no Santuário.",tel:["(21) 97015-0879","(21) 96429-2178"],ig:["oficialjoygarden"]},
+    {id:"viva",grupo:"festa",cat:"Doces e bem-casados",nome:"Viva 1000 Doçuras",oferta:"<b>10% de desconto</b> para casamentos do Santuário.",tel:["(21) 99755-4694"],ig:["viva1000docuras"]},
+    {id:"paparico",grupo:"papelaria",cat:"Convites e papelaria",nome:"Paparico Design",oferta:"<b>10% de desconto</b> para casamentos no Santuário.",tel:["(21) 98162-7630"],ig:["paparicodesign"]}
+  ];
+
+  function wa(t){return "https://wa.me/55"+t.replace(/\D/g,"");}
+  function card(p){
+    var h='<article class="p" data-g="'+p.grupo+'"><div class="cat">'+p.cat+'</div><h4>'+p.nome+'</h4><p class="offer">'+p.oferta+'</p>';
+    if(p.tel.length){h+='<div class="phone">'+p.tel.join(" · ")+'</div>';}
+    h+='<div class="links">';
+    if(p.tel.length){h+='<a class="btn solid" href="'+wa(p.tel[0])+'" target="_blank" rel="noopener">'+WA+'WhatsApp</a>';}
+    p.ig.forEach(function(u){h+='<a class="btn" href="https://www.instagram.com/'+u+'" target="_blank" rel="noopener">'+IG+'@'+u+'</a>';});
+    if(p.extra){h+='<a class="btn" href="'+p.extra.u+'" target="_blank" rel="noopener">'+p.extra.t+'</a>';}
+    return h+'</div></article>';
+  }
+
+  // Guia completo
+  var g=document.getElementById("guide");
+  g.innerHTML=P.map(card).join("");
+
+  // Indicações intercaladas na "revista"
+  var slots={cerimonia:["vieira","carlos","marjorie","duo"],papelaria:["paparico"],beleza:["rmartins","cores"]};
+  document.querySelectorAll("[data-slot]").forEach(function(el){
+    el.innerHTML=slots[el.getAttribute("data-slot")].map(function(id){return card(P.filter(function(p){return p.id===id;})[0]);}).join("");
+  });
+
+  // Filtro
+  var btns=document.querySelectorAll(".filters button");
+  function setFilter(f){
+    btns.forEach(function(x){x.setAttribute("aria-pressed",x.getAttribute("data-f")===f?"true":"false");});
+    g.querySelectorAll(".p").forEach(function(c){c.hidden=!(f==="todos"||c.getAttribute("data-g")===f);});
+  }
+  btns.forEach(function(b){b.addEventListener("click",function(){setFilter(b.getAttribute("data-f"));});});
+  document.querySelectorAll("[data-go]").forEach(function(a){a.addEventListener("click",function(){setFilter(a.getAttribute("data-go"));});});
+  document.querySelectorAll(".nav-ind").forEach(function(a){a.addEventListener("click",function(){setFilter("todos");});});
+  document.getElementById("sc-count").textContent=P.length+" parceiros";
+
+  // Lista de documentos (guardada só neste aparelho)
+  var KEY="sb-matrimonio-docs",saved={};
+  try{saved=JSON.parse(localStorage.getItem(KEY)||"{}")||{};}catch(e){saved={};}
+  document.querySelectorAll("#checklist input").forEach(function(i){
+    if(saved[i.id]){i.checked=true;i.closest("li").classList.add("done");}
+    i.addEventListener("change",function(){
+      saved[i.id]=i.checked;i.closest("li").classList.toggle("done",i.checked);
+      try{localStorage.setItem(KEY,JSON.stringify(saved));}catch(e){}
+    });
+  });
+})();
+</script>
+</body>
+</html>
