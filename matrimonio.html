@@ -237,6 +237,13 @@ section.chapter,.contact{scroll-margin-top:70px}
   .cover .seal{width:76px}
 }
 .cover .wrap{padding-bottom:36px}
+
+/* Ajustes de celular (25/11/2026) */
+.insert-head a{display:inline-flex;align-items:center;min-height:44px;padding:8px 0}
+@media (max-width:760px){
+  .nav{-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent);padding-right:28px}
+  .nav.fim{-webkit-mask-image:none;mask-image:none}
+}
 </style>
 </head>
 <body>
@@ -562,5 +569,6 @@ section.chapter,.contact{scroll-margin-top:70px}
   });
 })();
 </script>
+<script>(function(){var n=document.querySelector('.nav');if(n){var f=function(){n.classList.toggle('fim',n.scrollLeft+n.clientWidth>=n.scrollWidth-4)};n.addEventListener('scroll',f,{passive:true});f();}})();</script>
 </body>
 </html>
